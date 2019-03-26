@@ -1,0 +1,22 @@
+{
+  "name": "forkify",
+  "version": "1.0.0",
+  "description": "Recipe Searcher Web App",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nikitavasilev/forkify.git"
+  },
+  "author": "Nikita Vasilev",
+  "license": "Unlicense",
+  "bugs": {
+    "url": "https://github.com/nikitavasilev/forkify/issues"
+  },
+  "homepage": "https://github.com/nikitavasilev/forkify#readme",
+  "devDependencies": {
+    "webpack": "^4.29.6"
+  }
+}
