@@ -24,7 +24,7 @@ const limitRecipeTitle = (title, limit = 17) => {
   if (title.length > limit) {
     title.split(' ').reduce((acc, cur) => {
       if (acc + cur.length <= limit) {
-        newTitle.push(cur);      
+        newTitle.push(cur);
       }
       return acc + cur.length;
     }, 0);
@@ -35,7 +35,7 @@ const limitRecipeTitle = (title, limit = 17) => {
   return title;
 };
 
-const renderRecipe = recipe => {
+const renderRecipe = (recipe) => {
   const markup = `
     <li>
       <a class="results__link" href="#${recipe.recipe_id}">
@@ -83,11 +83,11 @@ const renderButtons = (page, numResults, resPerPage) => {
   elements.searchResPages.insertAdjacentHTML('afterbegin', button);
 };
 
-export const renderResults = (recipes, page = 1,resPerPage = 10) => {
+export const renderResults = (recipes, page = 1, resPerPage = 10) => {
   // render results of current page
   const start = (page - 1) * resPerPage;
   const end = page * resPerPage;
-  
+
   recipes.slice(start, end).forEach(renderRecipe);
 
   // render pagination buttons
