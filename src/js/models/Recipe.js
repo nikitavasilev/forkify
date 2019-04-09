@@ -1,3 +1,4 @@
+/* eslint-disable no-eval */
 import axios from 'axios';
 import { key, proxy } from '../config';
 
@@ -8,7 +9,9 @@ export default class Recipe {
 
   async getRecipe() {
     try {
-      const res = await axios(`${proxy}https://www.food2fork.com/api/get?key=${key}&rId=${this.id}`);
+      const res = await axios(
+        `${proxy}https://www.food2fork.com/api/get?key=${key}&rId=${this.id}`,
+      );
       this.title = res.data.recipe.title;
       this.author = res.data.recipe.publisher;
       this.img = res.data.recipe.image_url;
@@ -32,7 +35,17 @@ export default class Recipe {
   }
 
   parseIngredients() {
-    const unitsLong = ['tablespoons', 'tablespoon', 'ounces', 'ounce', 'teaspoons', 'teaspoon', 'cups', 'pounds'];
+    const unitsLong = [
+      'tablespoons',
+      'tablespoon',
+      'ounces',
+      'ounce',
+      'teaspoons',
+      'teaspoon',
+      'cups',
+      'pounds',
+    ];
+
     const unitsShort = ['tbsp', 'tbsp', 'oz', 'oz', 'tsp', 'tsp', 'cup', 'pound'];
 
     const newIngredients = this.ingredients.map((el) => {
