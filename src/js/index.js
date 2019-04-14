@@ -37,6 +37,7 @@ const controlSearch = async () => {
       clearLoader();
       searchView.renderResults(state.search.result);
     } catch (error) {
+      // eslint-disable-next-line no-alert
       alert('Something wrong with the search...');
       clearLoader();
     }
@@ -89,6 +90,7 @@ const controlRecipe = async () => {
       clearLoader();
       recipeView.renderRecipe(state.recipe);
     } catch (error) {
+      // eslint-disable-next-line no-alert
       alert(error.stack);
     }
   }
