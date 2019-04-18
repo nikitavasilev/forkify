@@ -11,14 +11,14 @@ export const clearResults = () => {
   elements.searchResPages.innerHTML = '';
 };
 
-export const highlightSelected = id => {
+export const highlightSelected = (id) => {
   const resultsArr = Array.from(document.querySelectorAll('.results__link'));
 
-  resultsArr.forEach(el => {
+  resultsArr.forEach((el) => {
     el.classList.remove('results__link--active');
   });
 
-  document.querySelector(`a[href="#${id}"]`).classList.add('results__link--active');
+  document.querySelector(`.results__link[href="#${id}"]`).classList.add('results__link--active');
 };
 
 /*
@@ -28,7 +28,7 @@ acc: 5 / acc + cur.length = 9 / newTitle = ['Pasta', 'with']
 acc: 9 / acc + cur.length = 15 / newTitle = ['Pasta', 'with', 'tomato']
 acc: 15 / acc + cur.length = 18 / newTitle = ['Pasta', 'with', 'tomato']
 */
-const limitRecipeTitle = (title, limit = 17) => {
+export const limitRecipeTitle = (title, limit = 17) => {
   const newTitle = [];
 
   if (title.length > limit) {
